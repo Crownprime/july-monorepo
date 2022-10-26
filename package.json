@@ -1,4 +1,8 @@
 {
+	"scripts": {
+		"dev:web": "turbo run dev --filter @july_cm/web",
+		"build:web": "turbo run build --filter @july_cm/web"
+	},
 	"devDependencies": {
 		"turbo": "^1.6.1"
 	}
