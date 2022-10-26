@@ -1,0 +1,13 @@
+node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+.DS_Store
+
+# turbo
+.turbo
