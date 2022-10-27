@@ -27,7 +27,7 @@ const routes = [
 export const Header = () => {
   return (
     <HeaderStyled>
-      {routes.map(route => (
+      {routes.map((route) => (
         <Link href={route.pathname} key={route.pathname} passHref={true}>
           <MenuItemStyled icon={route.icon} text={route.text} />
         </Link>

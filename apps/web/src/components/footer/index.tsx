@@ -69,7 +69,7 @@ const FooterStyled = styled.div`
   }
 `
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <FooterStyled className="footer">
       <div className="text" style={{ letterSpacing: 2 }}>

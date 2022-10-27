@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "eslint": "eslint --fix"
   },
   "dependencies": {
     "@react-spring/web": "^9.3.1",
