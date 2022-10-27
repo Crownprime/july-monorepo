@@ -21,7 +21,7 @@ const CoverStyled = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: ${props => props.theme.$lg};
+    padding-bottom: ${(props) => props.theme.$lg};
   }
 `
 

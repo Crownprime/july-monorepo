@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "root"
+		},
+		{
+			"path": "./apps/web",
+			"name": "web"
+		}
+	],
+	"settings": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	}
+}
