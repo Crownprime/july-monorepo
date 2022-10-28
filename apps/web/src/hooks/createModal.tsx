@@ -1,11 +1,11 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext, PropsWithChildren } from 'react'
 
-type IProvider<State> = React.FC<{ initialState?: State }>
+type IProvider<State> = React.FC<PropsWithChildren<{ initialState?: State }>>
 
 const EMPTY: unique symbol = Symbol()
 
 const createModal = <Value, State = void>(
-  useHook: (initialState?: State) => Value,
+  useHook: (initialState?: State) => Value
 ): { Provider: IProvider<State>; useModal: () => Value } => {
   const Container = createContext<Value | typeof EMPTY>(EMPTY)
   const Provider: IProvider<State> = ({ initialState, children }) => {

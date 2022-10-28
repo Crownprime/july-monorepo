@@ -9,44 +9,44 @@ export const TimeLineStyled = styled.div`
     content: '';
     width: 2px;
     height: 100%;
-    background: ${props => props.theme.$T1};
+    background: ${(props) => props.theme.$T1};
     position: absolute;
     top: 10px;
     left: -1px;
   }
   .year {
-    color: ${props => props.theme.$T0};
+    color: ${(props) => props.theme.$T0};
     position: relative;
-    padding-left: ${props => props.theme.$lg};
+    padding-left: ${(props) => props.theme.$lg};
     font-weight: 500;
     &::after {
       content: '';
       width: 12px;
       height: 12px;
       border-radius: 100%;
-      background: ${props => props.theme.$T0};
+      background: ${(props) => props.theme.$T0};
       position: absolute;
       top: 8px;
       left: -6px;
-      box-shadow: 0 0 0 3px ${props => props.theme.$T1};
+      box-shadow: 0 0 0 3px ${(props) => props.theme.$T1};
     }
   }
   .posts {
     .post {
-      padding-left: ${props => props.theme.$lg};
-      color: ${props => props.theme.$T0};
-      margin-top: ${props => props.theme.$lg};
+      padding-left: ${(props) => props.theme.$lg};
+      color: ${(props) => props.theme.$T0};
+      margin-top: ${(props) => props.theme.$lg};
       position: relative;
       &::after {
         content: '';
         width: 8px;
         height: 8px;
         border-radius: 100%;
-        background: ${props => props.theme.$T0};
+        background: ${(props) => props.theme.$T0};
         position: absolute;
         top: 8px;
         left: -4px;
-        box-shadow: 0 0 0 2px ${props => props.theme.$T1};
+        box-shadow: 0 0 0 2px ${(props) => props.theme.$T1};
       }
       .echo-content {
         display: flex;
@@ -55,8 +55,8 @@ export const TimeLineStyled = styled.div`
         .title {
           flex-grow: 1;
           flex-shrink: 1;
-          padding-right: ${props => props.theme.$md};
-          color: ${props => props.theme.$T0};
+          padding-right: ${(props) => props.theme.$md};
+          color: ${(props) => props.theme.$T0};
           & > span:hover {
             text-decoration: underline;
           }

@@ -14,7 +14,7 @@ const HoverButtonStyled = styled.div`
     overflow: hidden;
     position: absolute;
     height: ${CIRCLE_WIDTH}px;
-    background: ${props => props.theme.$T0};
+    background: ${(props) => props.theme.$T0};
     border-radius: ${CIRCLE_WIDTH}px;
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@ const HoverButtonStyled = styled.div`
       left: 18px;
       position: absolute;
       height: 2px;
-      background: ${props => props.theme.$W0};
+      background: ${(props) => props.theme.$W0};
       border-top-right-radius: 100%;
       border-bottom-right-radius: 100%;
       &::before {
@@ -34,13 +34,13 @@ const HoverButtonStyled = styled.div`
         right: 0;
         width: 10px;
         height: 10px;
-        border-top: 2px solid ${props => props.theme.$W0};
-        border-right: 2px solid ${props => props.theme.$W0};
+        border-top: 2px solid ${(props) => props.theme.$W0};
+        border-right: 2px solid ${(props) => props.theme.$W0};
         transform: rotate(45deg);
       }
     }
     .text {
-      color: ${props => props.theme.$W0};
+      color: ${(props) => props.theme.$W0};
     }
   }
   .text {
@@ -55,13 +55,13 @@ const HoverButtonStyled = styled.div`
 const HoverButton: React.FC<{
   onClick?: () => void
 }> = ({ onClick }) => {
-  const ref = useRef<HTMLDivElement>()
+  const ref = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(false)
   const props = useSpring({ width: active ? WIDTH : CIRCLE_WIDTH })
   const arrowProps = useSpring({
     width: active ? 16 : 0,
     left: active ? 10 : 18,
-    clamp: true,
+    clamp: true
   })
   useEffect(() => {
     const activeOn = () => {
@@ -78,8 +78,8 @@ const HoverButton: React.FC<{
     }
   }, [])
   return (
-    <HoverButtonStyled ref={ref} onClick={onClick}>
-      <div className="flex items-center">
+    <HoverButtonStyled onClick={onClick}>
+      <div className="flex items-center" ref={ref}>
         <animated.span className="circle" style={props}>
           <animated.span className="arrow" style={arrowProps}></animated.span>
           <div className="text">READ MORE</div>

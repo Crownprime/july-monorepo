@@ -17,17 +17,19 @@ const getPostById = (id: string): Post => {
   let { tags } = meta
   tags = tags ? tags.split(',') : null
   // 获取深度为 2 的 toc
-  const { children: tree } = remark().use(remarkHtml).parse(content)
+  const { children: tree } = remark()
+    .use(remarkHtml)
+    .parse(content)
   const toc = crateTOCTree(tree, 2)
   // 获得首段内容
-  const introduction = getFirstParagraph(tree)
+  const introduction = getFirstParagraph(tree) || ''
   return {
     ...(meta as PostMeta),
     tags,
     id,
     content,
     toc,
-    introduction,
+    introduction
   }
 }
 
@@ -38,16 +40,16 @@ const getPosts = () => {
   const fileNames = fs.readdirSync(postsDirectory)
 
   return fileNames
-    .map(fileName => {
+    .map((fileName) => {
       const id = fileName.replace(/\.md$/, '')
       return getPostById(id)
     })
-    .filter(post => post.status !== 'draft')
+    .filter((post) => post.status !== 'draft')
 }
 
 export const fetchCategoryPosts = () => {
   return getPosts()
-    .filter(post => post.status !== 'draft')
+    .filter((post) => post.status !== 'draft')
     .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
     .map(({ id, title, sub = null, date, tags, introduction }) => ({
       id,
@@ -55,13 +57,13 @@ export const fetchCategoryPosts = () => {
       sub,
       date,
       tags,
-      introduction,
+      introduction
     }))
 }
 
 // 获取全量 post id
 export const fetchPostIds = () => {
-  return getPosts().map(p => p.id)
+  return getPosts().map((p) => p.id)
 }
 
 /***********************************************************************

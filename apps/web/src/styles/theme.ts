@@ -38,7 +38,7 @@ const theme = {
   $W6: 'rgba(255, 255, 255, .02)',
 
   $RP0: 'rgba(182, 91, 70, .85)',
-  $RP1: 'rgba(182, 91, 70, .45)',
+  $RP1: 'rgba(182, 91, 70, .45)'
 }
 
 export default theme

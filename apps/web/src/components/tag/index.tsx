@@ -13,17 +13,17 @@ export const Tag: React.FC<{
   )
 }
 
-export const DateTag = ({ text }: { text: string }) => (
+export const DateTag: React.FC<{ text: string }> = ({ text }) => (
   <Tag text={text} icon={<AlarmIcon />} />
 )
-export const MarkTag = ({ text }: { text: string }) => (
+export const MarkTag: React.FC<{ text: string }> = ({ text }) => (
   <Tag text={text} icon={<LoyaltyIcon />} />
 )
 
 const TagsStyled = styled.div`
   display: inline-flex;
   .tag:not(:last-child) {
-    margin-right: ${props => props.theme.$mn};
+    margin-right: ${(props) => props.theme.$mn};
   }
 `
 

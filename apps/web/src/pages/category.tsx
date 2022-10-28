@@ -10,8 +10,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = fetchCategoryPosts()
   return {
     props: {
-      posts,
-    },
+      posts
+    }
   }
 }
 

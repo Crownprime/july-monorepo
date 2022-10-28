@@ -6,24 +6,24 @@ import { HEADER_HEIGHT } from '@/constants/header'
 
 const PostHeadWrap = styled.div`
   margin-top: ${HEADER_HEIGHT}px;
-  padding-top: ${props => props.theme.$md};
+  padding-top: ${(props) => props.theme.$md};
   .post-title {
     font-size: 30px;
-    color: ${props => props.theme.$N600};
+    color: ${(props) => props.theme.$N600};
   }
   .post-sub {
     font-size: 14px;
     line-height: 24px;
-    background: ${props => props.theme.$N100};
-    padding: ${props => props.theme.$sm};
-    border-radius: ${props => props.theme.$mn};
-    color: ${props => props.theme.$N400};
-    margin-top: ${props => props.theme.$md};
+    background: ${(props) => props.theme.$N100};
+    padding: ${(props) => props.theme.$sm};
+    border-radius: ${(props) => props.theme.$mn};
+    color: ${(props) => props.theme.$N400};
+    margin-top: ${(props) => props.theme.$md};
   }
   .post-tips {
-    margin-top: ${props => props.theme.$md};
+    margin-top: ${(props) => props.theme.$md};
     .tip {
-      margin-top: ${props => props.theme.$mn};
+      margin-top: ${(props) => props.theme.$mn};
     }
   }
 `
@@ -32,8 +32,8 @@ export const PostHeadStyled: FC<{
   title: string
   date: string
   sub?: string
-  tags?: string[]
-}> = ({ title, date, sub, tags }) => {
+  tags?: string[] | null
+}> = ({ title, date, sub, tags = [] }) => {
   return (
     <PostHeadWrap>
       <Container>
@@ -46,7 +46,7 @@ export const PostHeadStyled: FC<{
           {Boolean(tags?.length) && (
             <div className="tip tags">
               <TagSpace>
-                {tags.map(tag => (
+                {(tags || []).map((tag) => (
                   <MarkTag key={tag} text={tag} />
                 ))}
               </TagSpace>
@@ -66,29 +66,29 @@ export const PostTextWrap = styled.div`
     h2 {
       font-size: 18px;
       line-height: 24px;
-      padding-top: ${props => props.theme.$sm};
-      margin: ${props => props.theme.$lg} 0 ${props => props.theme.$md} 0;
+      padding-top: ${(props) => props.theme.$sm};
+      margin: ${(props) => props.theme.$lg} 0 ${(props) => props.theme.$md} 0;
       &::before {
         content: '##';
-        color: ${props => props.theme.$RP0};
-        padding-right: ${props => props.theme.$sm};
+        color: ${(props) => props.theme.$RP0};
+        padding-right: ${(props) => props.theme.$sm};
       }
     }
     h3 {
       font-size: 16px;
       line-height: 22px;
-      margin: ${props => props.theme.$md} 0 ${props => props.theme.$mn} 0;
+      margin: ${(props) => props.theme.$md} 0 ${(props) => props.theme.$mn} 0;
       &::before {
         content: '###';
-        color: ${props => props.theme.$RP0};
-        padding-right: ${props => props.theme.$sm};
+        color: ${(props) => props.theme.$RP0};
+        padding-right: ${(props) => props.theme.$sm};
       }
     }
     blockquote {
-      border-left: 3px solid ${props => props.theme.$RP0};
+      border-left: 3px solid ${(props) => props.theme.$RP0};
       padding-left: 8px;
       p {
-        color: ${props => props.theme.$T1};
+        color: ${(props) => props.theme.$T1};
       }
     }
   }
@@ -101,11 +101,11 @@ export const PostTextWrap = styled.div`
         &::before {
           content: '';
           position: absolute;
-          width: ${props => props.theme.$mn};
+          width: ${(props) => props.theme.$mn};
           height: 80%;
-          background: ${props => props.theme.$RP0};
+          background: ${(props) => props.theme.$RP0};
           top: 0;
-          left: -${props => props.theme.$sm};
+          left: -${(props) => props.theme.$sm};
           transform: translateY(10%);
         }
       }

@@ -1,6 +1,6 @@
 import Cover from './cover'
 
-const Home = () => {
+const Home: React.FC = () => {
   return <Cover />
 }
 

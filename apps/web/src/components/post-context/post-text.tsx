@@ -12,7 +12,7 @@ import {
   ImgTarget,
   H1Target,
   PTarget,
-  UlTarget,
+  UlTarget
 } from '@/components/post-target'
 import { PostTextWrap } from './styled'
 
@@ -23,7 +23,7 @@ const PostHtml: FC<{ data: Post }> = ({ data }) => {
     <ReactMarkdown
       components={{
         h1({ children }) {
-          const headText = head(children as string[])
+          const headText = head(children as string[]) || ''
           return (
             <Anchor id={headText}>
               <H1Target>{headText}</H1Target>
@@ -32,7 +32,7 @@ const PostHtml: FC<{ data: Post }> = ({ data }) => {
         },
         h2({ children }) {
           return (
-            <Anchor id={head(children as string[])}>
+            <Anchor id={head(children as string[]) || ''}>
               <h2>{head(children)}</h2>
             </Anchor>
           )
@@ -44,9 +44,15 @@ const PostHtml: FC<{ data: Post }> = ({ data }) => {
           return <UlTarget {...props}>{children}</UlTarget>
         },
         img: ImgTarget,
-        pre: PreTarget,
-        code: CodeTarget,
-        a: ATarget,
+        pre: (props) => {
+          return <PreTarget>{props.children}</PreTarget>
+        },
+        code: ({ children }) => {
+          return <CodeTarget>{children}</CodeTarget>
+        },
+        a: ({ children, href }) => {
+          return <ATarget href={href}>{children}</ATarget>
+        }
       }}
     >
       {data.content}
@@ -58,12 +64,12 @@ const PostToc: FC<{ toc: Post['toc'] }> = ({ toc }) => {
   const { id } = useAnchor()
   return (
     <ul className="pl-md">
-      {toc.map(t => (
+      {toc.map((t) => (
         <li key={t.text}>
           <a
             href={'#' + t.text}
             className={cls('inline-block mb-sm text-$T0 hover:text-$PR0', {
-              active: id === t.text,
+              active: id === t.text
             })}
           >
             {t.text}

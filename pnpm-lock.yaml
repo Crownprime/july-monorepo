@@ -14,9 +14,11 @@ importers:
       '@july_cm/tsconfig': workspace:*
       '@react-spring/web': ^9.3.1
       '@types/lodash-es': ^4.17.5
+      '@types/mdast': ^3.0.10
       '@types/node': ^16.6.2
       '@types/prismjs': ^1.16.6
-      '@types/react': ^17.0.19
+      '@types/react': ^18
+      '@types/react-dom': ^18
       '@types/react-scrollable-anchor': ^0.6.1
       '@types/styled-components': ^5.1.12
       '@typescript-eslint/eslint-plugin': ^4.29.2
@@ -57,7 +59,7 @@ importers:
       prismjs: 1.29.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-markdown: 7.1.2_tajjodozkwriifuucpeslipjue
+      react-markdown: 7.1.2_bbvjflvjoibwhtpmedigb26h6y
       react-scrollable-anchor: 0.6.1_biqbaboplfbrettd7655fr4n2y
       react-spring: 9.5.5_biqbaboplfbrettd7655fr4n2y
       remark: 14.0.2
@@ -69,9 +71,11 @@ importers:
       '@july_cm/eslint-config': link:../../packages/eslint-config
       '@july_cm/tsconfig': link:../../packages/tsconfig
       '@types/lodash-es': 4.17.6
+      '@types/mdast': 3.0.10
       '@types/node': 16.18.0
       '@types/prismjs': 1.26.0
-      '@types/react': 17.0.51
+      '@types/react': 18.0.24
+      '@types/react-dom': 18.0.8
       '@types/react-scrollable-anchor': 0.6.1
       '@types/styled-components': 5.1.26
       '@typescript-eslint/eslint-plugin': 4.33.0_k4l66av2tbo6kxzw52jzgbfzii
@@ -607,7 +611,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 17.0.51
+      '@types/react': 18.0.24
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -633,7 +637,6 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
-    dev: false
 
   /@types/mdurl/1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
@@ -654,14 +657,20 @@ packages:
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
+  /@types/react-dom/18.0.8:
+    resolution: {integrity: sha512-C3GYO0HLaOkk9dDAz3Dl4sbe4AKUGTCfFIZsz3n/82dPNN8Du533HzKatDxeUYWu24wJgMP1xICqkWk1YOLOIw==}
+    dependencies:
+      '@types/react': 18.0.24
+    dev: true
+
   /@types/react-scrollable-anchor/0.6.1:
     resolution: {integrity: sha512-ExstDPDHD0oC8WxHErnZhtdaCmGncBxRu24yRk8BNym7tCoR9BEpDACVp2SWPMttIAfUTv1/5yk3hsIL5R5VCQ==}
     dependencies:
-      '@types/react': 17.0.51
+      '@types/react': 18.0.24
     dev: true
 
-  /@types/react/17.0.51:
-    resolution: {integrity: sha512-YMddzAE+nSH04BiTJ5GydTxk0/3hckqyuOclg0s6zQYj/XzfRVNzHZAFwZb5SCSavkzTYUtcq/gwjLnvt2Y4cg==}
+  /@types/react/18.0.24:
+    resolution: {integrity: sha512-wRJWT6ouziGUy+9uX0aW4YOJxAY0bG6/AOk5AW5QSvZqI7dk6VBIbXvcVgIw/W5Jrl24f77df98GEKTJGOLx7Q==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -674,13 +683,12 @@ packages:
     resolution: {integrity: sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 17.0.51
+      '@types/react': 18.0.24
       csstype: 3.1.1
     dev: true
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
-    dev: false
 
   /@typescript-eslint/eslint-plugin/4.33.0_k4l66av2tbo6kxzw52jzgbfzii:
     resolution: {integrity: sha512-aINiAxGVdOl1eJyVjaWn/YcVAq4Gi/Yo35qHGCnqbWVz61g39D0h23veY/MA0rFFGfxK7TySg2uwDeNv+JgVpg==}
@@ -2869,14 +2877,14 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
 
-  /react-markdown/7.1.2_tajjodozkwriifuucpeslipjue:
+  /react-markdown/7.1.2_bbvjflvjoibwhtpmedigb26h6y:
     resolution: {integrity: sha512-ibMcc0EbfmbwApqJD8AUr0yls8BSrKzIbHaUsPidQljxToCqFh34nwtu3CXNEItcVJNzpjDHrhK8A+MAh2JW3A==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
     dependencies:
       '@types/hast': 2.3.4
-      '@types/react': 17.0.51
+      '@types/react': 18.0.24
       '@types/unist': 2.0.6
       comma-separated-tokens: 2.0.2
       hast-util-whitespace: 2.0.0

@@ -28,20 +28,20 @@ import 'prismjs/components/prism-ini'
 import 'prismjs/components/prism-nginx'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchPostIds().map(id => ({ params: { id } }))
+  const paths = fetchPostIds().map((id) => ({ params: { id } }))
   return {
     paths,
-    fallback: false,
+    fallback: false
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const id = Array.isArray(params.id) ? head(params.id) : params.id
-  const postData = fetchPostById(id)
+  const id = Array.isArray(params?.id) ? head(params?.id) : params?.id
+  const postData = fetchPostById(id || '')
   return {
     props: {
-      postData,
-    },
+      postData
+    }
   }
 }
 

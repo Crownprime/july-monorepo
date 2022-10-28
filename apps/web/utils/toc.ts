@@ -11,17 +11,17 @@ const isParagraph = (c: Content): c is Paragraph => c.type === 'paragraph'
 export const crateTOCTree = (list: Content[], dep?: number) => {
   let _list = cloneDeep(list.filter(isHeading))
   if (dep) {
-    _list = _list.filter(i => i.depth <= dep)
+    _list = _list.filter((i) => i.depth <= dep)
   }
   const toc: TOCNode[] = []
-  const stack = []
-  _list.forEach(heading => {
+  const stack: TOCNode[] = []
+  _list.forEach((heading) => {
     const { depth, children } = heading
     const text = children.filter(isText)[0].value
     const node: TOCNode = {
       depth,
       text,
-      children: [],
+      children: []
     }
     while (true) {
       // 栈为空，说明是顶级节点，入栈&入队列
@@ -30,7 +30,7 @@ export const crateTOCTree = (list: Content[], dep?: number) => {
         toc.push(node)
         break
       } else {
-        const p = last(stack)
+        const p = last(stack)!
         // 如果栈顶元素层级大于目前节点层级，可以认为目前节点是栈顶节点的子元素，入栈&入栈顶元素子节点队列
         if (p.depth < node.depth) {
           p.children.push(node)

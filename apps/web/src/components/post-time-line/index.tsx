@@ -31,7 +31,7 @@ const PostTimePoint: React.FC<{ post: Post }> = ({ post }) => {
         {Boolean(post.tags?.length) && (
           <div className="mt-mn">
             <TagSpace>
-              {post.tags.map(tag => (
+              {(post.tags || []).map((tag) => (
                 <MarkTag key={tag} text={tag} />
               ))}
             </TagSpace>
@@ -47,9 +47,9 @@ const YearBlock: React.FC<{ year: string }> = ({ year }) => {
     () =>
       year
         .split('')
-        .map(i => NUM_2_ZH[i] || i)
+        .map((i) => NUM_2_ZH[i] || i)
         .join(''),
-    [year],
+    [year]
   )
   return <div className="year text-xl">{echoYear}</div>
 }
@@ -62,7 +62,7 @@ const YearTimePoint: React.FC<{
     <TimeLineStyled>
       <YearBlock year={year} />
       <div className="posts">
-        {data.map(p => (
+        {data.map((p) => (
           <PostTimePoint post={p} key={p.id} />
         ))}
       </div>
@@ -76,7 +76,7 @@ const PostTimeLine: React.FC<{
   const postGroupByYear = useMemo(() => {
     const years: string[] = []
     const map: Record<string, Post[]> = {}
-    posts.forEach(p => {
+    posts.forEach((p) => {
       const year = getYearByTimestamp(p.date)
       if (map[year]) {
         map[year].push(p)
@@ -89,7 +89,7 @@ const PostTimeLine: React.FC<{
   }, [posts])
   return (
     <Container>
-      {postGroupByYear.years.map(y => (
+      {postGroupByYear.years.map((y) => (
         <YearTimePoint year={y} data={postGroupByYear.map[y] || []} key={y} />
       ))}
     </Container>

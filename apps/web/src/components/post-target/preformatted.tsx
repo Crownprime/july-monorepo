@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const PreTargetStyled = styled.div`
-  border-radius: ${props => props.theme.$sm};
+  border-radius: ${(props) => props.theme.$sm};
   overflow: hidden;
   position: relative;
   pre[class*='language-'] {
@@ -33,7 +33,7 @@ const PreTargetStyled = styled.div`
   }
 `
 
-export const PreTarget: React.FC = ({ children }) => {
+export const PreTarget: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <PreTargetStyled className="text-base">
       <div className="window-buttons">

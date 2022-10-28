@@ -1,7 +1,13 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  MutableRefObject
+} from 'react'
 
-export const useInView = (): [React.MutableRefObject<HTMLElement>, boolean] => {
-  const ref = useRef()
+export const useInView = (): [MutableRefObject<null>, boolean] => {
+  const ref = useRef(null)
   const [isView, setIsView] = useState(false)
   const cb = useCallback((entries: IntersectionObserverEntry[]) => {
     setIsView(Boolean(entries[0]?.isIntersecting))

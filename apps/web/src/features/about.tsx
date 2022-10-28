@@ -1,6 +1,6 @@
 import { Container, MyAvatar, H1Target, PTarget, UlTarget } from '@/components'
 
-export const About = () => {
+export const About: React.FC = () => {
   return (
     <Container>
       <div className="pt-[80px] min-h-[100vh]">

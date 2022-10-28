@@ -2,7 +2,7 @@ import Link from 'next/link'
 import {
   HomeIcon,
   DashboardIcon,
-  LocalFireDepartmentIcon,
+  LocalFireDepartmentIcon
 } from '@/components/icons'
 import { HeaderStyled, MenuItemStyled } from './styled'
 
@@ -10,21 +10,21 @@ const routes = [
   {
     text: '首页',
     pathname: '/',
-    icon: <HomeIcon />,
+    icon: <HomeIcon />
   },
   {
     text: '归档',
     pathname: '/category',
-    icon: <DashboardIcon />,
+    icon: <DashboardIcon />
   },
   {
     text: '关于',
     pathname: '/about',
-    icon: <LocalFireDepartmentIcon />,
-  },
+    icon: <LocalFireDepartmentIcon />
+  }
 ]
 
-export const Header = () => {
+export const Header: React.FC = () => {
   return (
     <HeaderStyled>
       {routes.map((route) => (

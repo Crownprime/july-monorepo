@@ -5,7 +5,7 @@ import theme from '@/styles/theme'
 import 'prismjs/themes/prism.css'
 import '@/styles/global.css'
 
-function App({ Component, pageProps }: AppProps) {
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />

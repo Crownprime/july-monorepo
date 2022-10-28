@@ -18,7 +18,7 @@ type GetWriteTimeLine = (
   prev: number,
   next: number,
   mode?: Mode,
-  last?: number,
+  last?: number
 ) => {
   range: number[]
   echo: number[]
@@ -28,7 +28,7 @@ const getWriteTimeLine: GetWriteTimeLine = (
   prev,
   next,
   mode = 'w',
-  last = 0,
+  last = 0
 ) => {
   const range: number[] = []
   const echo: number[] = []
@@ -50,18 +50,18 @@ const getWriteTimeLine: GetWriteTimeLine = (
   return {
     range,
     echo,
-    last: nLast,
+    last: nLast
   }
 }
 
 type Action = (prev: number) => { end: number; mode: Mode }
 const timeGenerator = (actions: Action[]) => {
   let prev = 0,
-    step = null
+    step: ReturnType<GetWriteTimeLine> | null = null
   const range = [],
     echo = [],
     history = [prev]
-  actions.forEach(action => {
+  actions.forEach((action) => {
     const { end, mode } = action(prev)
     step = getWriteTimeLine(prev, end, mode, step?.last || 0)
     range.push(...step.range)
@@ -70,12 +70,12 @@ const timeGenerator = (actions: Action[]) => {
     prev = end
   })
   range.push(prev)
-  echo.push(step.last)
+  echo.push(step === null ? 0 : (step as ReturnType<GetWriteTimeLine>).last)
   return {
     range,
     echo,
     history,
-    last: prev,
+    last: prev
   }
 }
 
@@ -97,7 +97,7 @@ const WriteTextWrap = styled.span`
   display: flex;
   align-items: center;
   .text {
-    color: ${props => props.theme.$T0};
+    color: ${(props) => props.theme.$T0};
     overflow: hidden;
     white-space: nowrap;
     width: 0;
@@ -114,18 +114,18 @@ const WriteText: React.FC<{
   const del = prime.length - common
   const add = final ? final.length - common : 0
   const actions: Action[] = [
-    prev => ({ end: prev + FRAME_SLEEP, mode: 's' }),
-    prev => ({ end: prev + prime.length, mode: 'w' }),
+    (prev) => ({ end: prev + FRAME_SLEEP, mode: 's' }),
+    (prev) => ({ end: prev + prime.length, mode: 'w' })
   ]
   if (final) {
     actions.push(
       ...([
-        prev => ({ end: prev + FRAME_SLEEP, mode: 's' }),
-        prev => ({ end: prev + del, mode: 'd' }),
-        prev => ({ end: prev + FRAME_SLEEP, mode: 's' }),
-        prev => ({ end: prev + add, mode: 'w' }),
-        prev => ({ end: prev + FRAME_SLEEP, mode: 's' }),
-      ] as Action[]),
+        (prev) => ({ end: prev + FRAME_SLEEP, mode: 's' }),
+        (prev) => ({ end: prev + del, mode: 'd' }),
+        (prev) => ({ end: prev + FRAME_SLEEP, mode: 's' }),
+        (prev) => ({ end: prev + add, mode: 'w' }),
+        (prev) => ({ end: prev + FRAME_SLEEP, mode: 's' })
+      ] as Action[])
     )
   }
   const { range, echo: output, last, history } = timeGenerator(actions)
@@ -142,20 +142,20 @@ const WriteText: React.FC<{
     },
     onChange({ value }) {
       if (Math.floor(value.width) === history[4]) {
-        setWords(final)
+        setWords(final || '')
       }
       if (value.width === last) {
         if (isEndWhenFinish) {
           setCursor(false)
         }
       }
-    },
+    }
   })
   return (
     <WriteTextWrap>
       <animated.div
         className="text text-xl"
-        style={{ width: width.to({ range, output }).to(w => `${w}ch`) }}
+        style={{ width: width.to({ range, output }).to((w) => `${w}ch`) }}
       >
         {words}
       </animated.div>
@@ -167,7 +167,7 @@ const WriteText: React.FC<{
 const CursorWrap = styled(animated.div)`
   width: 0.1em;
   height: 20px;
-  background: ${props => props.theme.$T0};
+  background: ${(props) => props.theme.$T0};
 `
 
 const Cursor = () => {
@@ -175,7 +175,7 @@ const Cursor = () => {
     loop: true,
     config: { duration: 800 },
     from: { opacity: 1 },
-    to: { opacity: 0 },
+    to: { opacity: 0 }
   })
   return <CursorWrap style={style} />
 }

@@ -8,7 +8,7 @@ const ImagePreview: FC<{ src: string; alt: string; onClose?: () => void }> = ({
   onClose,
   ...prop
 }) => {
-  const handleClose = e => {
+  const handleClose: React.MouseEventHandler<HTMLDivElement> = (e) => {
     e.stopPropagation()
     onClose?.()
   }
@@ -21,7 +21,7 @@ const ImagePreview: FC<{ src: string; alt: string; onClose?: () => void }> = ({
         <Image {...prop} fill={true} />
       </div>
     </ImagePreviewWrap>,
-    document.body,
+    document.body
   )
 }
 

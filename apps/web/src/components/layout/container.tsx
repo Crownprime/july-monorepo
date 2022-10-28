@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import cls from 'classnames'
 import theme from '@/styles/theme'
 
-export const Container: React.FC<{
+export const Container: React.FC<PropsWithChildren<{
   className?: string
-}> = ({ children, className }) => {
+}>> = ({ children, className }) => {
   return (
     <div className={cls('layout-container', className)}>
       {children}

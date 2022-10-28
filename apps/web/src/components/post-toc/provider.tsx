@@ -5,9 +5,9 @@ const useAnchorHook = () => {
   const [map, set] = useState(new Map())
   const update = useCallback(
     (id: string, isView: boolean) => {
-      set(v => new Map(v.set(id, isView)))
+      set((v) => new Map(v.set(id, isView)))
     },
-    [set],
+    [set]
   )
   const id = useMemo(() => {
     return [...map].filter(([, isView]) => isView)[0]?.[0]

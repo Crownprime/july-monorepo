@@ -25,7 +25,7 @@ const CoverStyled = styled.div`
   }
 `
 
-const Cover = () => {
+const Cover: React.FC = () => {
   const router = useRouter()
   const firstRef = useSpringRef()
   const secRef = useSpringRef()

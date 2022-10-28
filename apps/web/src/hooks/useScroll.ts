@@ -8,14 +8,14 @@ const getScroll = () => {
         ? 0
         : window.pageYOffset ||
           document.documentElement.scrollTop ||
-          document.body.scrollTop,
+          document.body.scrollTop
   }
 }
 
 const useScroll = () => {
   const [scroll, setScroll] = useState(getScroll())
   useEffect(() => {
-    let tick = null
+    let tick: number | null = null
     const handleScroll = () => {
       if (!tick) {
         tick = window.requestAnimationFrame(() => {
@@ -33,11 +33,11 @@ const useScroll = () => {
   return scroll
 }
 
-export const useScrollY = () => {
+export const useScrollY = (): number => {
   const { y } = useScroll()
   return y
 }
-export const useScrollX = () => {
+export const useScrollX = (): number => {
   const { x } = useScroll()
   return x
 }

@@ -1,4 +1,4 @@
-export const DashboardIcon = () => (
+export const DashboardIcon: React.FC = () => (
   <svg
     className="icon"
     xmlns="http://www.w3.org/2000/svg"

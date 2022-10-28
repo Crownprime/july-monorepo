@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, PropsWithChildren } from 'react'
 import styled from 'styled-components'
 import Container from '@/components/layout/container'
 import { HEADER_HEIGHT } from '@/constants/header'
@@ -25,8 +25,8 @@ const HeaderWrap = styled.div`
   left: 0;
   width: 100%;
   height: ${HEADER_HEIGHT}px;
-  background: ${props => props.theme.$W0};
-  box-shadow: 0 0 ${props => props.theme.$mn} 0 ${props => props.theme.$T2};
+  background: ${(props) => props.theme.$W0};
+  box-shadow: 0 0 ${(props) => props.theme.$mn} 0 ${(props) => props.theme.$T2};
   z-index: 10;
   transition: all 0.4s;
   .header-menus {
@@ -37,14 +37,14 @@ const HeaderWrap = styled.div`
     .menu-item {
       width: 60px;
       cursor: pointer;
-      color: ${props => props.theme.$T0};
-      margin-right: ${props => props.theme.$lg};
+      color: ${(props) => props.theme.$T0};
+      margin-right: ${(props) => props.theme.$lg};
       display: flex;
       align-items: center;
       overflow: hidden;
       transition: all 0.2s;
       &:hover {
-        color: ${props => props.theme.$RP0};
+        color: ${(props) => props.theme.$RP0};
       }
       .menu-text {
         white-space: nowrap;
@@ -53,7 +53,7 @@ const HeaderWrap = styled.div`
   }
 `
 
-export const HeaderStyled = ({ children }) => {
+export const HeaderStyled: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <HeaderWrap>
       <Container className="h-full">
