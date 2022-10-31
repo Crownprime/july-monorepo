@@ -2,9 +2,7 @@ import { FC } from 'react'
 import cls from 'classnames'
 import { head } from 'lodash-es'
 import ReactMarkdown from 'react-markdown'
-import { configureAnchors } from 'react-scrollable-anchor'
-import { Anchor, useAnchor, AnchorContext } from '@/components/post-toc'
-import { HEADER_HEIGHT } from '@/constants/header'
+import { ScrollableAnchor, useScrollableAnchorModel } from '@july_cm/react-lib'
 import {
   PreTarget,
   CodeTarget,
@@ -16,8 +14,6 @@ import {
 } from '@/components/post-target'
 import { PostTextWrap } from './styled'
 
-configureAnchors({ offset: -(HEADER_HEIGHT + 20) })
-
 const PostHtml: FC<{ data: Post }> = ({ data }) => {
   return (
     <ReactMarkdown
@@ -25,16 +21,16 @@ const PostHtml: FC<{ data: Post }> = ({ data }) => {
         h1({ children }) {
           const headText = head(children as string[]) || ''
           return (
-            <Anchor id={headText}>
+            <ScrollableAnchor id={headText}>
               <H1Target>{headText}</H1Target>
-            </Anchor>
+            </ScrollableAnchor>
           )
         },
         h2({ children }) {
           return (
-            <Anchor id={head(children as string[]) || ''}>
+            <ScrollableAnchor id={head(children as string[]) || ''}>
               <h2>{head(children)}</h2>
-            </Anchor>
+            </ScrollableAnchor>
           )
         },
         p({ children, ...props }) {
@@ -61,7 +57,7 @@ const PostHtml: FC<{ data: Post }> = ({ data }) => {
 }
 
 const PostToc: FC<{ toc: Post['toc'] }> = ({ toc }) => {
-  const { id } = useAnchor()
+  const { active } = useScrollableAnchorModel()
   return (
     <ul className="pl-md">
       {toc.map((t) => (
@@ -69,7 +65,7 @@ const PostToc: FC<{ toc: Post['toc'] }> = ({ toc }) => {
           <a
             href={'#' + t.text}
             className={cls('inline-block mb-sm text-$T0 hover:text-$PR0', {
-              active: id === t.text
+              active: active === t.text
             })}
           >
             {t.text}
@@ -84,14 +80,12 @@ const PostToc: FC<{ toc: Post['toc'] }> = ({ toc }) => {
 const PostText: FC<{ data: Post }> = ({ data }) => {
   return (
     <PostTextWrap>
-      <AnchorContext.Provider>
-        <div className="post-text-html">
-          <PostHtml data={data} />
-        </div>
-        <div className="post-text-toc text-base pl-md sticky flex-shrink-0">
-          <PostToc toc={data.toc} />
-        </div>
-      </AnchorContext.Provider>
+      <div className="post-text-html">
+        <PostHtml data={data} />
+      </div>
+      <div className="post-text-toc text-base pl-md sticky flex-shrink-0">
+        <PostToc toc={data.toc} />
+      </div>
     </PostTextWrap>
   )
 }

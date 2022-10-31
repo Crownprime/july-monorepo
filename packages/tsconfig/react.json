@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    // preserve 会保留 jsx，react 都会转化为 js，react-native 保留 jsx，但扩展名为 js
+    "jsx": "preserve",
+    // 允许 import React from "react" 写，而不是 import * as React from "react"
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"]
+}

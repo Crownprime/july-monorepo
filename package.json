@@ -2,7 +2,7 @@
 	"scripts": {
 		"dev:web": "turbo run dev --filter @july_cm/web",
 		"build:web": "turbo run build --filter @july_cm/web",
-		"eslint:web": "turbo run eslint --filter @july_cm/web"
+		"build:react-lib": "turbo run build --filter @july_cm/react-lib"
 	},
 	"devDependencies": {
 		"turbo": "^1.6.1"
