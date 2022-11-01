@@ -1,8 +1,7 @@
 import { FC } from 'react'
-import cls from 'classnames'
 import { head } from 'lodash-es'
 import ReactMarkdown from 'react-markdown'
-import { ScrollableAnchor, useScrollableAnchorModel } from '@july_cm/react-lib'
+import { ScrollableAnchor } from '@july_cm/react-lib'
 import {
   PreTarget,
   CodeTarget,
@@ -12,6 +11,7 @@ import {
   PTarget,
   UlTarget
 } from '@/components/post-target'
+import { PostToc } from '@/components/post-toc'
 import { PostTextWrap } from './styled'
 
 const PostHtml: FC<{ data: Post }> = ({ data }) => {
@@ -56,36 +56,13 @@ const PostHtml: FC<{ data: Post }> = ({ data }) => {
   )
 }
 
-const PostToc: FC<{ toc: Post['toc'] }> = ({ toc }) => {
-  const { active } = useScrollableAnchorModel()
-  return (
-    <ul className="pl-md">
-      {toc.map((t) => (
-        <li key={t.text}>
-          <a
-            href={'#' + t.text}
-            className={cls('inline-block mb-sm text-$T0 hover:text-$PR0', {
-              active: active === t.text
-            })}
-          >
-            {t.text}
-          </a>
-          {Boolean(t.children.length) && <PostToc toc={t.children} />}
-        </li>
-      ))}
-    </ul>
-  )
-}
-
 const PostText: FC<{ data: Post }> = ({ data }) => {
   return (
     <PostTextWrap>
       <div className="post-text-html">
         <PostHtml data={data} />
       </div>
-      <div className="post-text-toc text-base pl-md sticky flex-shrink-0">
-        <PostToc toc={data.toc} />
-      </div>
+      <PostToc toc={data.toc} />
     </PostTextWrap>
   )
 }

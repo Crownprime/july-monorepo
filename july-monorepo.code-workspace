@@ -6,7 +6,11 @@
 		},
 		{
 			"path": "./apps/web",
-			"name": "web"
+			"name": "app/web"
+		},
+		{
+			"path": "./packages/react-lib",
+			"name": "lib/react-lib"
 		}
 	],
 	"settings": {

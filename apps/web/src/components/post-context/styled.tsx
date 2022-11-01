@@ -60,7 +60,7 @@ export const PostHeadStyled: FC<{
 
 export const PostTextWrap = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   .post-text-html {
     width: 100%;
     h2 {
@@ -90,30 +90,6 @@ export const PostTextWrap = styled.div`
       p {
         color: ${(props) => props.theme.$T1};
       }
-    }
-  }
-  .post-text-toc {
-    width: 200px;
-    top: ${HEADER_HEIGHT + 20}px;
-    li > a {
-      &.active {
-        position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          width: ${(props) => props.theme.$mn};
-          height: 80%;
-          background: ${(props) => props.theme.$RP0};
-          top: 0;
-          left: -${(props) => props.theme.$sm};
-          transform: translateY(10%);
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 1040px) {
-    .post-text-toc {
-      display: none;
     }
   }
 `
