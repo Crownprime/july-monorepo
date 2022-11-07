@@ -16,6 +16,7 @@
 	"settings": {
 		"editor.codeActionsOnSave": {
 			"source.fixAll.eslint": true
-		}
+		},
+		"markdownHelper.imgLocalPath": "apps/web/public/images"
 	}
 }

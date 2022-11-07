@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"dev:web": "turbo run dev --filter @july_cm/web",
-		"build:web": "turbo run build --filter @july_cm/web",
+		"build:web": "turbo run build --filter=web...",
 		"build:react-lib": "turbo run build --filter @july_cm/react-lib"
 	},
 	"devDependencies": {

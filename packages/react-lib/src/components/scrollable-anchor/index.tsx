@@ -71,7 +71,7 @@ const useAnchor = (toc: Toc[] = []) => {
     return () => window.removeEventListener('scroll', scrollHandler)
   }, [])
 
-  return { active, addAnchorEl }
+  return { active, anchorEls, addAnchorEl }
 }
 
 const { Provider, useModel } = createModel(useAnchor)

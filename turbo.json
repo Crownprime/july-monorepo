@@ -5,7 +5,9 @@
       "cache": false,
       "dependsOn": ["^build"]
     },
-    "build": {},
+    "build": {
+      "cache": false
+    },
     "@july_cm/web#build": {
       "outputs": [".next/**"]
     }

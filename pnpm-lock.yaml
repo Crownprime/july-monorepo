@@ -30,6 +30,7 @@ importers:
       eslint: ^7.32.0
       eslint-plugin-react: ^7.24.0
       gray-matter: ^4.0.3
+      jump.js: ^1.0.2
       lodash-es: ^4.17.21
       next: ^13.0.0
       postcss: ^8.3.6
@@ -53,6 +54,7 @@ importers:
       crypto-js: 4.1.1
       dayjs: 1.11.6
       gray-matter: 4.0.3
+      jump.js: 1.0.2
       lodash-es: 4.17.21
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       prismjs: 1.29.0
