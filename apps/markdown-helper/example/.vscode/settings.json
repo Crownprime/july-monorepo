@@ -1,0 +1,4 @@
+{
+  "markdownHelper.imgLocalPath": "./images",
+  "markdownHelper.imgHostPath": "/images"
+}

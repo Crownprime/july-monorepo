@@ -1,0 +1,52 @@
+{
+  "name": "@july_cm/markdown-helper",
+  "displayName": "Markdown 小帮手",
+  "description": "只是做了点微小的工作，所以是小帮手而不是大帮手之类的...",
+  "version": "1.0.2",
+  "publisher": "July",
+  "repository": "https://github.com/Crownprime/july-monorepo",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": ["Formatters"],
+  "activationEvents": [
+    "onCommand:markdown-helper.paste"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "markdown-helper.paste",
+      "title": "Markdown 小帮手：复制图片"
+    }],
+    "configuration": {
+      "type": "object",
+      "title": "markdown-helper-config",
+      "properties": {
+        "markdownHelper.imgLocalPath": {
+          "type": "string",
+          "default": "public/images",
+          "description": "指定图片存在本地的目录"
+        },
+        "markdownHelper.imgHostPath": {
+          "type": "string",
+          "default": "",
+          "description": "指定远程图片存储目录"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "dev": "webpack --watch --progress",
+    "build": "webpack --mode production --devtool hidden-source-map",
+    "deploy": "npm run build && cd ./dist && vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "14.x",
+    "@types/vscode": "^1.63.0",
+    "node-loader": "^2.0.0",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.3",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  }
+}

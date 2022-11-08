@@ -1,22 +1,16 @@
 {
-	"folders": [
-		{
-			"path": ".",
-			"name": "root"
-		},
-		{
-			"path": "./apps/web",
-			"name": "app/web"
-		},
-		{
-			"path": "./packages/react-lib",
-			"name": "lib/react-lib"
-		}
-	],
-	"settings": {
-		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
-		},
-		"markdownHelper.imgLocalPath": "apps/web/public/images"
-	}
+  "folders": [
+    {
+      "path": ".",
+      "name": "root"
+    },
+    {
+      "path": "./apps/web",
+      "name": "app/web"
+    },
+    {
+      "path": "./packages/react-lib",
+      "name": "lib/react-lib"
+    }
+  ]
 }
