@@ -31,7 +31,9 @@ importers:
       '@july_cm/eslint-config': workspace:*
       '@july_cm/react-lib': workspace:*
       '@july_cm/tsconfig': workspace:*
+      '@next/eslint-plugin-next': ^13.0.2
       '@react-spring/web': ^9.3.1
+      '@types/jump.js': ^1.0.4
       '@types/lodash-es': ^4.17.5
       '@types/mdast': ^3.0.10
       '@types/node': ^16.6.2
@@ -89,6 +91,8 @@ importers:
       '@july_cm/eslint-config': link:../../packages/eslint-config
       '@july_cm/react-lib': link:../../packages/react-lib
       '@july_cm/tsconfig': link:../../packages/tsconfig
+      '@next/eslint-plugin-next': 13.0.2
+      '@types/jump.js': 1.0.4
       '@types/lodash-es': 4.17.6
       '@types/mdast': 3.0.10
       '@types/node': 16.18.0
@@ -389,6 +393,12 @@ packages:
     resolution: {integrity: sha512-65v9BVuah2Mplohm4+efsKEnoEuhmlGm8B2w6vD1geeEP2wXtlSJCvR/cCRJ3fD8wzCQBV41VcMBQeYET6MRkg==}
     dev: false
 
+  /@next/eslint-plugin-next/13.0.2:
+    resolution: {integrity: sha512-W+fIIIaFU7Kct7Okx91C7XDRGolv/w2RUenX2yZFeeNVcuVzDIKUcNmckrYbYcwrNQUSXmtwrs3g8xwast0YtA==}
+    dependencies:
+      glob: 7.1.7
+    dev: true
+
   /@next/swc-android-arm-eabi/13.0.0:
     resolution: {integrity: sha512-+DUQkYF93gxFjWY+CYWE1QDX6gTgnUiWf+W4UqZjM1Jcef8U97fS6xYh+i+8rH4MM0AXHm7OSakvfOMzmjU6VA==}
     engines: {node: '>= 10'}
@@ -684,6 +694,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/jump.js/1.0.4:
+    resolution: {integrity: sha512-qhDD1WvrwsKhH22gWF+duJrNLJ2xqAm3RNLl48hSDTzTVQPsZETkyD4KGmTc53GiYoTqcGjdZvkZD5cxZR5Yxw==}
     dev: true
 
   /@types/lodash-es/4.17.6:
@@ -2057,6 +2071,17 @@ packages:
 
   /glob-to-regexp/0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
+    dev: true
+
+  /glob/7.1.7:
+    resolution: {integrity: sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.1.2
+      once: 1.4.0
+      path-is-absolute: 1.0.1
     dev: true
 
   /glob/7.2.3:

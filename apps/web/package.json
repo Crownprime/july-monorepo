@@ -32,6 +32,8 @@
     "@july_cm/eslint-config": "workspace:*",
     "@july_cm/react-lib": "workspace:*",
     "@july_cm/tsconfig": "workspace:*",
+    "@next/eslint-plugin-next": "^13.0.2",
+    "@types/jump.js": "^1.0.4",
     "@types/lodash-es": "^4.17.5",
     "@types/mdast": "^3.0.10",
     "@types/node": "^16.6.2",
