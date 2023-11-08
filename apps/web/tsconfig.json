@@ -16,7 +16,9 @@
       ]
     },
     "incremental": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",

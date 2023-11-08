@@ -1,4 +1,4 @@
 {
   "installCommand": "node ../../common/scripts/install-run-rush.js install -t @july_cm/web",
-  "buildCommand": "node ../../common/scripts/install-run-rushx.js build"
+  "buildCommand": "node ../../common/scripts/install-run-rushx.js build -t @july_cm/web"
 }
