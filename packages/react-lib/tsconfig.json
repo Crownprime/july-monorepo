@@ -1,0 +1,11 @@
+{
+  "extends": "@july_cm/ts-config/tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "declaration": true,
+    "jsx": "react"
+  },
+  "files": ["./src/index.ts"]
+}
