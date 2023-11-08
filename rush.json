@@ -434,8 +434,8 @@
       "projectFolder": "packages/eslint-config"
     },
     {
-      "packageName": "@july_cm/tsconfig",
-      "projectFolder": "packages/tsconfig"
+      "packageName": "@july_cm/ts-config",
+      "projectFolder": "packages/ts-config"
     },
     {
       "packageName": "@july_cm/react-lib",

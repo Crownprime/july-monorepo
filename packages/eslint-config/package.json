@@ -1,18 +1,27 @@
 {
   "name": "@july_cm/eslint-config",
   "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "exit"
-  },
-  "dependencies": {
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "prettier": "^1.13.0"
+    "build": "tsc -b --force"
   },
   "devDependencies": {
-    "eslint": "8.26.0"
-  },
-  "peerDependencies": {
-    "eslint": "^8.26.0"
+    "@babel/core": "^7.23.2",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@july_cm/ts-config": "workspace: *",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-define-config": "^1.24.1",
+    "eslint-plugin-jsonc": "^2.10.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jsonc-eslint-parser": "^2.0.4",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   }
 }
