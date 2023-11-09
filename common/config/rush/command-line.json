@@ -175,6 +175,16 @@
     //    */
     //   // "autoinstallerName": "my-task"
     // }
+    {
+      "name": "build",
+      "commandKind": "bulk",
+      "summary": "😈 构建所有项目",
+      "ignoreMissingScript": true,
+      // 允许警告
+      "allowWarningsInSuccessfulBuild": true,
+      // 并行
+      "enableParallelism": true
+    }
   ],
 
   /**

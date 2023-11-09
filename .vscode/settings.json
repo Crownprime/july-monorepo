@@ -12,5 +12,9 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "rush.json": "jsonc",
+    "**/common/config/rush/*.json": "jsonc"
   }
 }
