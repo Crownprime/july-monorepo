@@ -430,6 +430,10 @@
       "projectFolder": "apps/web"
     },
     {
+      "packageName": "@july_cm/web-articles",
+      "projectFolder": "packages/web-articles"
+    },
+    {
       "packageName": "@july_cm/eslint-config",
       "projectFolder": "packages/eslint-config"
     },
@@ -438,8 +442,12 @@
       "projectFolder": "packages/ts-config"
     },
     {
-      "packageName": "@july_cm/react-lib",
-      "projectFolder": "packages/react-lib"
+      "packageName": "@july_cm/rc-hooks",
+      "projectFolder": "packages/rc-hooks"
+    },
+    {
+      "packageName": "@july_cm/remark-introduction",
+      "projectFolder": "packages/remark-introduction"
     }
     // 
     // {

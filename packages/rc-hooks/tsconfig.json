@@ -1,0 +1,8 @@
+{
+  "extends": "@july_cm/ts-config/tsconfig.react.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "dist",
+  },
+  "include": ["src"]
+}

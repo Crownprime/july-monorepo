@@ -1,4 +1,5 @@
 {
+  "eslint.nodePath": "packages/eslint-config/node_modules/eslint",
   "eslint.probe": [
     "javascript",
     "javascriptreact",
@@ -16,5 +17,8 @@
   "files.associations": {
     "rush.json": "jsonc",
     "**/common/config/rush/*.json": "jsonc"
-  }
+  },
+  "cSpell.words": [
+    "rushstack"
+  ]
 }

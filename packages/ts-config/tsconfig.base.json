@@ -19,9 +19,11 @@
     "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
-    "target": "es2018"
+    "target": "ESNext",
+    // 直接编译成 esm
+    "module": "ESNext"
   },
   "watchOptions": {
     "excludeDirectories": [
@@ -34,5 +36,8 @@
       "dist",
       "public/externals/vendors"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

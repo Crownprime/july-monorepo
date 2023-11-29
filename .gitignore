@@ -76,3 +76,9 @@ common/autoinstallers/*/.npmrc
 
 # 编译文件
 dist
+
+# rollup cache
+.rollup.cache
+
+# ts build cache
+tsconfig.tsbuildinfo

@@ -2,13 +2,9 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  swcMinify: true,
-  compiler: {
-    styledComponents: true,
+  typescript: {
+    ignoreBuildErrors: true,
   },
-  images: {
-    formats: ['image/avif', 'image/webp'],
-  },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

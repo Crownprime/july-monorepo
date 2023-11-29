@@ -1,4 +1,4 @@
-// require('@rushstack/eslint-config/patch/modern-module-resolution');
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   parser: '@babel/eslint-parser',
@@ -33,11 +33,42 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
+      plugins: ['import'],
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
+        'plugin:import/typescript',
       ],
+      rules: {
+        'import/order': [
+          'error',
+          {
+            groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'object', 'type', 'index'],
+            'newlines-between': 'always',
+            pathGroupsExcludedImportTypes: ['builtin'],
+            alphabetize: { order: 'asc', caseInsensitive: true },
+            pathGroups: [
+              {
+                pattern: 'react**',
+                group: 'external',
+                position: 'before',
+              },
+              {
+                pattern: '{@/**,@**}',
+                group: 'internal',
+                position: 'before',
+              },
+              {
+                pattern: '{**.less,**.json,**.svg,**.yaml,**.css}',
+                group: 'index',
+                position: 'after',
+              },
+            ],
+          },
+        ],
+        '@typescript-eslint/no-explicit-any': 'warn',
+      },
     },
     {
       files: ['package.json'],
