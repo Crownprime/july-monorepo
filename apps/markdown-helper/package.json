@@ -1,0 +1,67 @@
+{
+  "name": "@july_cm/markdown-helper",
+  "displayName": "Markdown 小帮手",
+  "description": "只是做了点微小的工作，所以是小帮手而不是大帮手之类的...",
+  "version": "1.1.0",
+  "icon": "public/icon.jpg",
+  "publisher": "July",
+  "repository": "https://github.com/Crownprime/july-monorepo",
+  "engines": {
+    "vscode": "^1.84.2"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "main": "extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-helper.status",
+        "title": "Markdown 小帮手：检查插件状态"
+      },
+      {
+        "command": "markdown-helper.paste",
+        "title": "Markdown 小帮手：复制图片"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "markdown-helper-config",
+      "properties": {
+        "markdownHelper.env": {
+          "type": "string",
+          "description": "指定一个配置文件路径"
+        },
+        "markdownHelper.local": {
+          "type": "string",
+          "description": "指定图片存在本地的目录"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && NODE_ENV=production rollup -c",
+    "deploy": "npm run build && cd ./dist && vsce package --no-dependencies",
+    "publish": "cd ./dist && vsce publish --no-dependencies",
+    "watch": "rollup -w -c"
+  },
+  "dependencies": {
+    "await-to-js": "^3.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@july_cm/eslint-config": "workspace:*",
+    "@july_cm/ts-config": "workspace:*",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/node": "^18",
+    "@types/vscode": "^1.84.2",
+    "rollup": "^4.5.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.2.2"
+  }
+}

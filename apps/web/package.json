@@ -25,10 +25,11 @@
     "@july_cm/eslint-config": "workspace:*",
     "@july_cm/ts-config": "workspace:*",
     "@types/lodash-es": "^4.17.5",
-    "@types/node": "^16.6.2",
+    "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/styled-components": "^5.1.12",
+    "eslint": "^8.53.0",
     "typescript": "^5.2.2"
   }
 }

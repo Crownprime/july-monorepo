@@ -1,0 +1,6 @@
+{
+  "markdownHelper": {
+    "env": ".env",
+    "local": "public"
+  }
+}

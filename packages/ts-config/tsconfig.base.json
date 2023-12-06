@@ -5,7 +5,12 @@
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "declaration": true,
-    "composite": true,
+    /**
+    * https://juejin.cn/post/7165429078470688781
+    * 开启主要是为了搭配 references 使用
+    * 开启之后 declaration 必须为 true，没必要，所以关了
+    **/
+    "composite": false,
     "incremental": true,
     "strictNullChecks": false,
     "noImplicitAny": false,

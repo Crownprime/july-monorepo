@@ -1,7 +1,4 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.base.json",
-  "ts-node": {
-    "files": true
-  }
 }

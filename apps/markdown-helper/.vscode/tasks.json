@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [{
+    "type": "npm",
+    "script": "watch",
+    /**
+    * 由于需要 watch 会阻止调试的主进程，所以在后台运行
+    */
+    "isBackground": true,
+    /**
+    * 当运行在后台是，将无法追踪状态，所以需要配置专门的问题追踪器
+    */
+    "problemMatcher": {
+      "base": "$tsc-watch",
+      "background": {
+        "activeOnStart": true,
+        "endsPattern": "^.*waiting for changes\\.\\.\\."
+      }
+    }
+  }]
+}

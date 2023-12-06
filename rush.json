@@ -430,6 +430,10 @@
       "projectFolder": "apps/web"
     },
     {
+      "packageName": "@july_cm/markdown-helper",
+      "projectFolder": "apps/markdown-helper"
+    },
+    {
       "packageName": "@july_cm/web-articles",
       "projectFolder": "packages/web-articles"
     },
