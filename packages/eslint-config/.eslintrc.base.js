@@ -12,7 +12,7 @@ module.exports = {
       presets: ['@babel/preset-env', '@babel/preset-react'],
     },
   },
-  ignorePatterns: ['**/node_modules', '**/dist', '**/!(package).json', 'vercel.json'],
+  ignorePatterns: ['**/node_modules', '**/dist', '!**/**.json', '!package.json'],
   rules: {
     'prettier/prettier': [
       'warn',
