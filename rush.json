@@ -447,7 +447,8 @@
     },
     {
       "packageName": "@july_cm/rc-hooks",
-      "projectFolder": "packages/rc-hooks"
+      "projectFolder": "packages/rc-hooks",
+      "shouldPublish": true
     },
     {
       "packageName": "@july_cm/remark-introduction",
