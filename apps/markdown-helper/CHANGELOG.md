@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [1.1.2] - 2022.12.20
+
+修复了 commands 完全挂掉的重大 bug，使用 1.1.1 版本需要升级到 1.1.2 才能解决...
+
+## [1.1.1] - 2022.12.20
+
+增加了 `markdown-helper.meta` 命令，可以为 markdown 快速生成简单的 meta 信息
+
+优化了打包配置，一些不必要的信息从根的 package.json 移除
+
 ## [1.1.0] - 2022.12.05
 
 修改了配置 `imgLocalPath` => `local`，同时支持本地配置 `env` 文件代替 settings，主要是存一些敏感信息可以被 ignore 掉。

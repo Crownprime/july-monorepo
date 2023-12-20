@@ -1,8 +1,6 @@
 {
   "extends": "@july_cm/ts-config/tsconfig.node.json",
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "dist",
     "module": "ESNext",
     "declaration": false
   },

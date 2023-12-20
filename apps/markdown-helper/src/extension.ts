@@ -1,18 +1,9 @@
 import vscode, { type ExtensionContext } from 'vscode';
 
-import { paste } from './core/paste';
-
-const extensionScope = 'markdown-helper';
+import { commands } from './commands';
 
 export function activate(context: ExtensionContext) {
-  const subscriptions = [
-    vscode.commands.registerCommand(`${extensionScope}.status`, () => {
-      vscode.window.showInformationMessage('hi, i am working ~');
-    }),
-    vscode.commands.registerCommand(`${extensionScope}.paste`, () => {
-      paste();
-    }),
-  ];
-
-  context.subscriptions.push(...subscriptions);
+  context.subscriptions.push(
+    ...commands.map(({ command, callback }) => vscode.commands.registerCommand(command, callback))
+  );
 }

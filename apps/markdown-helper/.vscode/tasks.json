@@ -14,7 +14,8 @@
       "base": "$tsc-watch",
       "background": {
         "activeOnStart": true,
-        "endsPattern": "^.*waiting for changes\\.\\.\\."
+        "beginsPattern": "^\\[rollup-plugin-stats\\]: build start",
+        "endsPattern": "^\\[rollup-plugin-stats\\]: build end"
       }
     }
   }]
