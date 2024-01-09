@@ -133,6 +133,12 @@ importers:
       prettier: 3.0.3
       typescript: 5.2.2
 
+  ../../packages/lib-a:
+    specifiers: {}
+
+  ../../packages/lib-b:
+    specifiers: {}
+
   ../../packages/rc-hooks:
     specifiers:
       '@july_cm/eslint-config': workspace:*

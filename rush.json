@@ -453,6 +453,16 @@
     {
       "packageName": "@july_cm/remark-introduction",
       "projectFolder": "packages/remark-introduction"
+    },
+    {
+      "packageName": "@july_cm/lib-a",
+      "projectFolder": "packages/lib-a",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@july_cm/lib-b",
+      "projectFolder": "packages/lib-b",
+      "shouldPublish": true
     }
     // 
     // {
