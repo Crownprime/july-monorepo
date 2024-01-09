@@ -134,7 +134,10 @@ importers:
       typescript: 5.2.2
 
   ../../packages/lib-a:
-    specifiers: {}
+    specifiers:
+      '@july_cm/lib-b': 'workspace: *'
+    dependencies:
+      '@july_cm/lib-b': link:../lib-b
 
   ../../packages/lib-b:
     specifiers: {}

@@ -1,4 +1,7 @@
 {
   "name": "@july_cm/lib-a",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "dependencies": {
+    "@july_cm/lib-b": "workspace: *"
+  }
 }
