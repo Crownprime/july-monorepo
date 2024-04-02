@@ -33,6 +33,7 @@ const Header = () => {
       <div className={`${prefixCls}--nav`}>
         <Link href="/">Home</Link>
         <Link href="/articles">Articles</Link>
+        <Link href="/tools/icons">Icons</Link>
       </div>
     </HeaderStyled>
   );

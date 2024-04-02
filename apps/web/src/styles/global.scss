@@ -1,0 +1,41 @@
+/** reset default css */
+@import 'reset-css/reset.css';
+
+/** font */
+@import './fonts.scss';
+
+/** prism */
+@import './prism.scss';
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter var, ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+  font-variation-settings: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/** 覆盖默认样式 */
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+/** 魔改 prism 样式 */
+pre[class*="language-"] {
+  border-radius: 8px;
+}
+
+.july-icon {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  color: inherit;
+  line-height: 0;
+  text-rendering: optimizeLegibility;
+}

@@ -76,7 +76,7 @@
    * version. In those cases, you will need to add an entry to the "allowedAlternativeVersions"
    * section of the common-versions.json.
    */
-  // "ensureConsistentVersions": true,
+  "ensureConsistentVersions": true,
 
   /**
    * Large monorepos can become intimidating for newcomers if project folder paths don't follow
@@ -451,22 +451,21 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@july_cm/rc-notion",
+      "projectFolder": "packages/rc-notion",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@july_cm/rc-design",
+      "projectFolder": "packages/rc-design"
+    },
+    {
+      "packageName": "@july_cm/rc-icons",
+      "projectFolder": "packages/rc-icons"
+    },
+    {
       "packageName": "@july_cm/remark-introduction",
       "projectFolder": "packages/remark-introduction"
     }
-    // 
-    // {
-    //   "packageName": "my-controls",
-    //   "projectFolder": "libraries/my-controls",
-    //   "reviewCategory": "production",
-    //   "tags": [ "frontend-team" ]
-    // },
-    // 
-    // {
-    //   "packageName": "my-toolchain",
-    //   "projectFolder": "tools/my-toolchain",
-    //   "reviewCategory": "tools",
-    //   "tags": [ "tools" ]
-    // }
   ]
 }

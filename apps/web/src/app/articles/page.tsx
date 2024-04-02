@@ -1,14 +1,16 @@
-import React, { cache } from 'react';
+import React, { Suspense } from 'react';
 
-import { server } from '@july_cm/web-articles';
+import styles from './page.module.scss';
+import { Articles } from '../../components/articles';
 
-import { ArticleList } from '../../components/article-list';
-
-const getArticles = cache(() => server().filterByPublished().sortByDate().value);
-
-const Page: React.FC = async () => {
-  const list = getArticles();
-  return <ArticleList articles={list} />;
+const Page: React.FC = () => {
+  return (
+    <div className={styles['articles']}>
+      <Suspense fallback={'loading...'}>
+        <Articles />
+      </Suspense>
+    </div>
+  );
 };
 
 export default Page;

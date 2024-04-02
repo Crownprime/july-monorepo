@@ -8,28 +8,33 @@
     "start": "next start"
   },
   "dependencies": {
+    "@july_cm/rc-design": "workspace:*",
     "@july_cm/rc-hooks": "workspace:*",
+    "@july_cm/rc-icons": "workspace:*",
+    "@july_cm/rc-notion": "workspace:*",
     "@july_cm/remark-introduction": "workspace:*",
-    "@july_cm/web-articles": "workspace:*",
+    "@mapbox/rehype-prism": "^0.9.0",
+    "@notionhq/client": "^2.2.14",
     "classnames": "^2.3.1",
     "dayjs": "^1.11.10",
     "lodash-es": "^4.17.21",
-    "modern-normalize": "^2.0.0",
     "next": "^14.0.1",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "reset-css": "^5.0.2",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@july_cm/eslint-config": "workspace:*",
     "@july_cm/ts-config": "workspace:*",
-    "@types/lodash-es": "^4.17.5",
+    "@types/lodash-es": "^4.17.11",
     "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/styled-components": "^5.1.12",
     "eslint": "^8.53.0",
+    "sass": "^1.69.7",
     "typescript": "^5.2.2"
   }
 }

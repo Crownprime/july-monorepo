@@ -1,0 +1,42 @@
+{
+  "name": "@july_cm/rc-notion",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && NODE_ENV=production rollup -c"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "lodash-es": "^4.17.21",
+    "prismjs": "^1.29.0"
+  },
+  "devDependencies": {
+    "@july_cm/eslint-config": "workspace:*",
+    "@july_cm/rc-design": "workspace:*",
+    "@july_cm/ts-config": "workspace:*",
+    "@notionhq/client": "^2.2.14",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/lodash-es": "^4.17.11",
+    "@types/prismjs": "^1.26.3",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.5.1",
+    "rollup-plugin-preserve-directives": "^0.4.0",
+    "rollup-plugin-sass": "^1.12.21",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@july_cm/rc-design": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

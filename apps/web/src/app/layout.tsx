@@ -2,8 +2,9 @@ import React from 'react';
 
 import { RootClientLayout } from '../components/root-client-layout';
 
-import 'node_modules/modern-normalize/modern-normalize.css';
-import './global.css';
+import '@july_cm/rc-design/dist/styles.css';
+import '@july_cm/rc-notion/dist/styles.css';
+import '../styles/global.scss';
 
 const RootLayout: React.FC<React.PropsWithChildren> = (props) => {
   return (

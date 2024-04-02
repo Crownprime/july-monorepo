@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
+import { remarkIntroduction } from '@july_cm/remark-introduction';
 import matter from 'gray-matter';
 
 import { Articles } from './core';
+import { serialize } from './serialize';
 
 import type { Article, ArticleMeta } from './typings';
 
@@ -48,7 +50,10 @@ const connect = () => {
     if (meta.date) {
       meta.date = +new Date(meta.date);
     }
-    return { meta: meta as ArticleMeta, id: fileId, content };
+    meta.introduction = serialize(content, {
+      remarkPlugins: [remarkIntroduction],
+    });
+    return { meta: meta as ArticleMeta, id: fileId, content, compiled: serialize(content) };
   };
   return new Articles(articleNames.map(getArticleByName));
 };

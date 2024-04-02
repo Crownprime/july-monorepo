@@ -1,0 +1,10 @@
+{
+  "extends": "@july_cm/ts-config/tsconfig.react.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "esModuleInterop": true
+  },
+  "include": ["**/*.tsx", "**/*.ts", "**/*.scss"],
+  "exclude": ["node_modules", "dist"]
+}

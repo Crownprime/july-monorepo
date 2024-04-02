@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@july_cm/eslint-config": "workspace:*",
-    "@july_cm/ts-config": "workspace: *",
+    "@july_cm/ts-config": "workspace:*",
     "@types/lodash-es": "^4.17.11",
     "@types/react": "^18",
     "@types/react-dom": "^18",

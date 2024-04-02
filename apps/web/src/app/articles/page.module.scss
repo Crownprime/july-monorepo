@@ -1,0 +1,7 @@
+.articles {
+  margin: 0 auto;
+  max-width: 860px;
+  & > :not(:first-child) {
+    margin-top: 40px;
+  }
+}

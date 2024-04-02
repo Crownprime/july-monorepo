@@ -8,13 +8,13 @@ status: published
 
 能够发版成功的必要条件是 package 的 version 必须有变化，**下文所有做的事情核心目的就是让指定 package 的 version 能够产生变化，然后顺利发版**。
 
-# 能被发布的包之「shouldPublish」
+## 能被发布的包之「shouldPublish」
 
 首先我们知道在一个大 monorepo 中并不是所有的 packages 都需要被发布。
 
 因此我们需要明确有哪些包需要被发布，当然我们自己心知肚明还不够还需要告诉 Rush.js。`rush.json` 配置文件的 `projects` 字段中有一个布尔类型的属性 `shouldPublish`，标记该包是否需要被发布：
 
-```jsonc
+```json5
 // rush.json
 {
   "projects": [{
@@ -33,7 +33,7 @@ status: published
 
 通常我们只会发布**改动到的**以及**被改动波及到的**包，而不是每次发布把 monorepo 仓库内能发的包都全量发一次。所以下一个步骤是定位我们所需要发布的包。
 
-# 需要被发布的包之「rush change」
+## 需要被发布的包之「rush change」
 
 我们对包内的文件做一些略微的修改后执行 `git add . && rush change` 命令
 
@@ -69,7 +69,7 @@ bulk 等一系列相关参数也不是必填的，它主要针对的是多包发
 
 ![图片](RGmiZCuDi8DLYDO0WYev9w==.PNG)
 
-# 快速发布之「rush publish」
+## 快速发布之「rush publish」
 
 摘录一部分会在本文中用到的参数
 
@@ -97,7 +97,7 @@ rush publish [-a] [-p] [--set-access-level {public,restricted}] [--include-all] 
 rush publish -a -p
 ```
 
-## 配置 .npmrc
+### 配置 .npmrc
 
 如果是第一次发包过程应该不会太顺利，因为我们还需要对 npm 做一些配置，找到 `common/config/rush/.npmrc-publish` 文件
 
@@ -110,7 +110,7 @@ access=public
 
 这里的 NPM_AUTH_TOKEN 令牌取决于你发布的源，如果是发到 npm 上则需要到其官网登录账号之后找到 account token 界面新建一个 token 即可（记得勾选 publish 的权限）。
 
-## 推荐的做法
+### 推荐的做法
 
 通常不推荐直接把 token 字符串写在 `config/rush/.npmrc-publish` 文件上，因为该文件很有可能是会提交到远程 token 有泄露的风险。
 
@@ -129,7 +129,7 @@ export NPM_AUTH_TOKEN="npm_xxxxxxx"
 
 然而经验告诉我们在 monorepo 中任何功能都需要「乘以」包的数量，不止是 dev、watch、build，我们的 publish 有时候也要按照依赖树顺序执行一遍。
 
-# 版本策略「version policies」
+## 版本策略「version policies」
 
 Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持两种类型：
 
@@ -138,7 +138,7 @@ Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持
 
 找到 `common/config/rush/version-policies.json` 文件，它的内容是一个数组允许你设定多种策略。
 
-```jsonc
+```json5
 // common/config/rush/version-policies.json
 [
   {
@@ -150,7 +150,7 @@ Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持
 
 设定完成之后在 `rush.json` 中为指定的 projects 增加 `versionPolicyName` 字段即可：
 
-```jsonc
+```json5
 // rush.json
 {
   "projects": [{
@@ -160,7 +160,7 @@ Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持
 }
 ```
 
-## individualVersion
+### individualVersion
 
 我们先来说 `individualVersion` 策略，因为它非常简单。上文我们提到 `rush change` 通过 diff 罗列出有代码修改的包然后在 `rush publish` 前完成版本的变更，一句话解释就是：
 
@@ -186,13 +186,13 @@ Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持
 
 > 明确的是 dependencies 和 devDependencies 都属于依赖关系，peerDependencies 不属于
 
-## lockStepVersion
+### lockStepVersion
 
 `lockStepVersion` 策略比较容易描述，使用同一策略的包锁定相同版本号。这种场景非常多比如 `react` 与 `react-dom`、`vue` 与 `@vue/runtime-dom` 等，我们在使用时尽量会使用相同版本的包，这里不做太多使用场景的解释。
 
 如果我们设置策略为 `lockStepVersion` 那么还有个必填字段为 `version`，它表示所有应用本策略的包的当前版本。这玩意需要手动设置一次否则运行会报错。原因可能是初次设定策略的时候多个包的版本可能是不一致的，所以需要人工来强制设置一个统一版本（但我认为是 rush 偷懒了）。这里的 `version` 在 `rush publish -a` 时会和 package.json 中 version 一起被自动修改，所以后续就不用再关心了。
 
-```jsonc
+```json5
 {
   "policyName": "syncVersion",
   "definitionName": "lockStepVersion",
@@ -201,7 +201,7 @@ Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持
 }
 ```
 
-### nextBump
+#### nextBump
 
 `lockStepVersion` 策略还有一个选填字段 `nextBump`，他用于设置下一次版本提升的级别。
 
@@ -218,7 +218,7 @@ Rush.js 给了一个叫版本策略(version policies)的概念，到目前支持
 
 因此如果你需要用到 `nextBump` 字段，那么你必须用到 `rush version` 命令。
 
-# 修改版本的能力来自于「rush version」
+## 修改版本的能力来自于「rush version」
 
 放到最后讲的原因是它并非是一个必须的命令，简化笔记、推荐用到再看。
 
@@ -244,7 +244,7 @@ rush version [--bump]
 
 > 听起来非常简单粗暴，所以在 CI 中使用该功能是一个非常好的选择。
 
-# 总结
+## 总结
 
 最后做一个总结吧。单纯的利用 Rush.js 单包发布是非常简单的，但当需要「自动化」的完成多包联合发布我们就需要了解 publish 的高阶用法，包括版本策略、bump 等概念。
 

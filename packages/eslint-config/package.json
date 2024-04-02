@@ -1,17 +1,15 @@
 {
   "name": "@july_cm/eslint-config",
   "version": "0.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc -b --force"
+    "build": "exit 0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
-    "@july_cm/ts-config": "workspace: *",
     "@rushstack/eslint-patch": "^1.5.1",
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^6.10.0",

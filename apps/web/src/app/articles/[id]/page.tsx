@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
-import { server } from '@july_cm/web-articles';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import Link from 'next/link';
+
+import styles from './page.module.scss';
+import { ArticleProperties, ArticleBlocks } from '../../../components/article';
 
 interface PageProps {
   params: {
@@ -9,22 +11,24 @@ interface PageProps {
   };
 }
 
-const generateStaticParams = () => {
-  return server()
-    .filterByPublished()
-    .value.map((i) => ({ id: i.id }));
-};
-
 const Page: React.FC<PageProps> = ({ params }) => {
-  const article = server().filterById(params.id).one;
+  const { id } = params;
 
   return (
     <div>
-      <MDXRemote source={article.content} />
+      <div className={styles['back']}>
+        <Link href="/articles">back</Link>
+      </div>
+      <div className={styles['article-content']}>
+        <Suspense fallback="loading....">
+          <ArticleProperties id={id} />
+        </Suspense>
+        <Suspense fallback="loading....">
+          <ArticleBlocks id={id} />
+        </Suspense>
+      </div>
     </div>
   );
 };
 
 export default Page;
-
-export { generateStaticParams };

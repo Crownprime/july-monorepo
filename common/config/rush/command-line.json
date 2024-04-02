@@ -184,6 +184,12 @@
       "allowWarningsInSuccessfulBuild": true,
       // 并行
       "enableParallelism": true
+    },
+    {
+      "name": "dev:web",
+      "commandKind": "global",
+      "summary": "🌞 以开发模式运行 @july_cm/web",
+      "shellCommand": "cd apps/web && rushx dev"
     }
   ],
 
