@@ -1,28 +1,26 @@
-import Link from 'next/link'
-import {
-  HomeIcon,
-  DashboardIcon,
-  LocalFireDepartmentIcon
-} from '@/components/icons'
-import { HeaderStyled, MenuItemStyled } from './styled'
+import Link from 'next/link';
+
+import { HomeIcon, DashboardIcon, LocalFireDepartmentIcon } from '@/components/icons';
+
+import { HeaderStyled, MenuItemStyled } from './styled';
 
 const routes = [
   {
     text: '首页',
     pathname: '/',
-    icon: <HomeIcon />
+    icon: <HomeIcon />,
   },
   {
     text: '归档',
     pathname: '/category',
-    icon: <DashboardIcon />
+    icon: <DashboardIcon />,
   },
   {
     text: '关于',
     pathname: '/about',
-    icon: <LocalFireDepartmentIcon />
-  }
-]
+    icon: <LocalFireDepartmentIcon />,
+  },
+];
 
 export const Header: React.FC = () => {
   return (
@@ -33,7 +31,7 @@ export const Header: React.FC = () => {
         </Link>
       ))}
     </HeaderStyled>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

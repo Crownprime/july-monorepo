@@ -1,14 +1,16 @@
-import { forwardRef, PropsWithChildren } from 'react'
-import styled from 'styled-components'
-import Container from '@/components/layout/container'
-import { HEADER_HEIGHT } from '@/constants/header'
+import { forwardRef, PropsWithChildren } from 'react';
+
+import styled from 'styled-components';
+
+import Container from '@/components/layout/container';
+import { HEADER_HEIGHT } from '@/constants/header';
 
 export const MenuItemStyled = forwardRef<
   HTMLDivElement,
   {
-    icon: JSX.Element
-    text: string
-    onClick?: () => void
+    icon: JSX.Element;
+    text: string;
+    onClick?: () => void;
   }
 >(({ icon, text, onClick }, ref) => {
   return (
@@ -16,8 +18,8 @@ export const MenuItemStyled = forwardRef<
       <div className="menu-icon mr-mn">{icon}</div>
       <span className="menu-text">{text}</span>
     </div>
-  )
-})
+  );
+});
 
 const HeaderWrap = styled.div`
   position: fixed;
@@ -51,7 +53,7 @@ const HeaderWrap = styled.div`
       }
     }
   }
-`
+`;
 
 export const HeaderStyled: React.FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -60,7 +62,7 @@ export const HeaderStyled: React.FC<PropsWithChildren> = ({ children }) => {
         <div className="header-menus">{children}</div>
       </Container>
     </HeaderWrap>
-  )
-}
+  );
+};
 
-export default HeaderStyled
+export default HeaderStyled;
