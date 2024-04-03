@@ -6,12 +6,26 @@ const client = new Client({ auth: process.env.NOTION_TOKEN });
 
 /** 查询 page 列表 */
 const fetchPageList = async () => {
-  const list = await client.search({
+  if (!process.env.NOTION_DATABASE_ID) {
+    return [];
+  }
+  const list = await client.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID,
     filter: {
-      property: 'object',
-      value: 'page',
+      property: 'Published',
+      type: 'checkbox',
+      checkbox: {
+        equals: true,
+      },
     },
+    sorts: [{ property: 'Published Date', direction: 'descending' }],
   });
+  // const list = await client.search({
+  //   filter: {
+  //     property: 'object',
+  //     value: 'page',
+  //   },
+  // });
   return list.results as PageObjectResponse[];
 };
 

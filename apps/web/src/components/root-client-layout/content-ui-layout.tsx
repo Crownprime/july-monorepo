@@ -20,6 +20,7 @@ const ContentUILayoutStyled = styled.div`
     position: sticky;
     top: 0;
     background-color: #ffffff;
+    z-index: 50;
     &.${prefixCls}--scrolled {
       box-shadow:
         0 1px 3px 0 rgb(0 0 0 / 0.1),
