@@ -434,10 +434,6 @@
       "projectFolder": "apps/markdown-helper"
     },
     {
-      "packageName": "@july_cm/web-articles",
-      "projectFolder": "packages/web-articles"
-    },
-    {
       "packageName": "@july_cm/eslint-config",
       "projectFolder": "packages/eslint-config"
     },
