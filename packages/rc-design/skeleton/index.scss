@@ -1,0 +1,21 @@
+.jcd-skeleton {
+  background: linear-gradient(90deg,
+    var(--color-bg-0) 25%,
+    var(--color-bg-1) 44%,
+    var(--color-bg-0) 88%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  animation-fill-mode: forwards;
+  border-radius: 3px;
+  height: 20px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

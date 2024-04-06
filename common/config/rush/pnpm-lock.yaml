@@ -143,11 +143,14 @@ importers:
       '@rollup/plugin-node-resolve': ^15.2.3
       '@types/react': ^18
       '@types/react-dom': ^18
+      classnames: ^2.3.1
       rollup: ^4.5.1
       rollup-plugin-sass: ^1.12.21
       rollup-plugin-typescript2: ^0.36.0
       tslib: ^2.6.2
       typescript: ^5.2.2
+    dependencies:
+      classnames: 2.3.2
     devDependencies:
       '@july_cm/eslint-config': link:../eslint-config
       '@july_cm/ts-config': link:../ts-config

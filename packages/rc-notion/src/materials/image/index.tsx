@@ -17,7 +17,11 @@ const Image: React.FC<ImageProps> = ({ block, className, ...props }) => {
     return null;
   }
 
-  return <img src={image.file.url} className={cls('jmd-notion-image', className)} {...props} />;
+  return (
+    <div className={cls('jmd-notion-image', className)}>
+      <img src={image.file.url} {...props} />
+    </div>
+  );
 };
 
 export { Image, type ImageProps };

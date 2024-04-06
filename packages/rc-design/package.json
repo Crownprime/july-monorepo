@@ -5,7 +5,9 @@
   "scripts": {
     "build": "rm -rf ./dist && NODE_ENV=production rollup -c"
   },
-  "dependencies": {},
+  "dependencies": {
+    "classnames": "^2.3.1"
+  },
   "devDependencies": {
     "@july_cm/eslint-config": "workspace:*",
     "@july_cm/ts-config": "workspace:*",

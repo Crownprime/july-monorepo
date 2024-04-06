@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react';
 
 import styles from './page.module.scss';
-import { Articles } from '../../components/articles';
+import { Articles, Skeleton } from '../../components/articles';
 
 const Page: React.FC = () => {
   return (
     <div className={styles['articles']}>
-      <Suspense fallback={'loading...'}>
+      <Suspense fallback={<Skeleton />}>
         <Articles />
       </Suspense>
     </div>
