@@ -1,26 +1,24 @@
 import React from 'react';
 
-import cls from 'classnames';
+import { Typography } from '@july_cm/rc-design';
 
-import { RichText } from '../rich-text';
+import { RichText } from './rich-text';
 
-import type { NotionBlock } from '../../types';
-
-import './index.scss';
+import type { NotionBlock } from '../types';
 
 type ParagraphProps = {
   block: NotionBlock.Paragraph;
 } & React.HTMLAttributes<HTMLParagraphElement>;
 
-const Paragraph: React.FC<ParagraphProps> = ({ block, className, ...props }) => {
+const Paragraph: React.FC<ParagraphProps> = ({ block, ...props }) => {
   const { paragraph } = block;
   const { rich_text: text } = paragraph;
   return (
-    <p className={cls('jmd-notion-paragraph', className)} {...props}>
+    <Typography.Paragraph {...props}>
       {text.map((t) => (
         <RichText block={t} key={t.plain_text} />
       ))}
-    </p>
+    </Typography.Paragraph>
   );
 };
 

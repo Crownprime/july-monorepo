@@ -186,10 +186,24 @@
       "enableParallelism": true
     },
     {
+      "name": "build:watch",
+      "commandKind": "bulk",
+      "summary": "😈 以监听模式构建所有项目",
+      "ignoreMissingScript": true,
+      "safeForSimultaneousRushProcesses": true,
+      // 使用增量构建逻辑 (重要)
+      "incremental": true,
+      "enableParallelism": true,
+      // 启用 "watch mode"
+      "watchForChanges": true
+    },
+    {
       "name": "dev:web",
       "commandKind": "global",
       "summary": "🌞 以开发模式运行 @july_cm/web",
-      "shellCommand": "cd apps/web && rushx dev"
+      "safeForSimultaneousRushProcesses": true,
+      "autoinstallerName": "rush-commands",
+      "shellCommand": "concurrently --kill-others --prefix \"{name}\" --names [watch],[demo] -c white,blue \"rush build:watch --to-except @july_cm/web\" \"cd apps/web && rushx dev\""
     }
   ],
 

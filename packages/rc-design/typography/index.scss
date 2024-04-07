@@ -1,6 +1,6 @@
-.jmd-notion-rich-text {
+.jmd-text {
   &.bold {
-    font-size: 600;
+    font-weight: 600;
   }
   &.code {
     color: var(--color-text-0);
@@ -10,7 +10,12 @@
   }
   &.href {
     color: var(--color-text-0);
-    font-size: 600;
     border-bottom: 1px solid var(--color-text-0);
   }
+}
+
+.jmd-paragraph {
+  color: var(--color-text-1);
+  margin-bottom: 12px;
+  line-height: 1.5;
 }

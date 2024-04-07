@@ -1,22 +1,28 @@
 import React from 'react';
 
+import { Typography } from '@july_cm/rc-design';
 import * as iconMap from '@july_cm/rc-icons';
+
+import { ArticleLayout } from '../../../components/layout';
 
 const icons = Object.keys(iconMap).map((key) => ({ key, Icon: iconMap[key] }));
 
 const Page: React.FC = () => {
   return (
-    <div>
-      <p>This is my React Icon Lib. </p>
-      <p>The icon svg resources get from Google Fonts.</p>
-      <p>https://fonts.google.com/icons?icon.style=Rounded</p>
-      <p>Svg customization:</p>
-      <ul>
-        <li>fill: 0</li>
-        <li>weight: 400</li>
-        <li>grade: 0</li>
-        <li>optical size: 48</li>
-      </ul>
+    <ArticleLayout>
+      <Typography.Paragraph>This is my React Icon Lib. </Typography.Paragraph>
+      <Typography.Paragraph>
+        The icon svg resources get from&nbsp;
+        <Typography.Text href="https://fonts.google.com/icons?icon.style=Rounded">
+          Google Fonts
+        </Typography.Text>
+        .
+      </Typography.Paragraph>
+      <Typography.Paragraph>Google Fonts has some options, this is Svg customization:</Typography.Paragraph>
+      <Typography.Paragraph>fill: 0</Typography.Paragraph>
+      <Typography.Paragraph>weight: 400</Typography.Paragraph>
+      <Typography.Paragraph>grade: 0</Typography.Paragraph>
+      <Typography.Paragraph>optical size: 48</Typography.Paragraph>
       <h1>How to use</h1>
       <h2>Install</h2>
       <pre>npm install @july_cm/rc-icons</pre>
@@ -30,7 +36,7 @@ const Page: React.FC = () => {
       {icons.map(({ Icon }) => (
         <Icon />
       ))}
-    </div>
+    </ArticleLayout>
   );
 };
 

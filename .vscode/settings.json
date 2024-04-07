@@ -19,6 +19,7 @@
     "**/common/config/rush/*.json": "jsonc"
   },
   "cSpell.words": [
+    "autoinstaller",
     "rushstack"
   ],
   "markdownHelper.local": "apps/web/public/images"

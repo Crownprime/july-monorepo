@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf ./dist && NODE_ENV=production rollup -c"
+    "build": "rm -rf ./dist && NODE_ENV=production rollup -c",
+    "build:watch": "rushx build"
   },
   "dependencies": {
     "classnames": "^2.3.1"

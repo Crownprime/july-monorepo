@@ -1,0 +1,6 @@
+{
+  "name": "rush-commands",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
