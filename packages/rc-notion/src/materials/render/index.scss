@@ -1,0 +1,13 @@
+.jmd-notion-render {
+  .indented {
+    margin-left: 8px;
+  }
+  .grid {
+    display: flex;
+    column-gap: 8px;
+  }
+  .column {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}

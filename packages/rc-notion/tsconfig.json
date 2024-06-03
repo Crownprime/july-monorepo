@@ -3,6 +3,9 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "dist",
+    "types": [
+      "react/experimental"
+    ]
   },
   "include": ["src"]
 }

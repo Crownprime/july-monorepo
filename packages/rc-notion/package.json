@@ -10,6 +10,7 @@
     "build:watch": "rushx build"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.14",
     "classnames": "^2.3.1",
     "lodash-es": "^4.17.21",
     "prismjs": "^1.29.0"
@@ -18,9 +19,6 @@
     "@july_cm/eslint-config": "workspace:*",
     "@july_cm/rc-design": "workspace:*",
     "@july_cm/ts-config": "workspace:*",
-    "@notionhq/client": "^2.2.14",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/lodash-es": "^4.17.11",
     "@types/prismjs": "^1.26.3",

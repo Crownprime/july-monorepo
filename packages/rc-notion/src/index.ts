@@ -5,6 +5,6 @@ export {
   MultiTags as NotionPagePropertyMultiTags,
 } from './properties';
 
-export { BlockRender as NotionBlockRender } from './materials/block-render';
+export { Render as NotionRender } from './materials/render';
 
 export type { NotionPageProperty } from './types';

@@ -42,4 +42,11 @@ const fetchPageBlocks = async (id: string) => {
   return blocks.results;
 };
 
-export { fetchPageList, fetchPage, fetchPageBlocks, client };
+/** 查询 block */
+const fetchBlock = async (id: string) => {
+  const block = await client.blocks.retrieve({ block_id: id });
+  console.log(block);
+  return block;
+};
+
+export { fetchPageList, fetchPage, fetchPageBlocks, fetchBlock, client };

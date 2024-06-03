@@ -1,4 +1,5 @@
 import type {
+  BlockObjectResponse,
   RichTextItemResponse,
   ParagraphBlockObjectResponse,
   CodeBlockObjectResponse,
@@ -28,3 +29,5 @@ export type Quote = QuoteBlockObjectResponse;
 export type List = BulletedListItemBlockObjectResponse;
 
 export type Block = RichText | Paragraph | Code | Heading | Divider | Image | List;
+
+export type { BlockObjectResponse };
