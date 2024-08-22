@@ -462,6 +462,10 @@
     {
       "packageName": "@july_cm/remark-introduction",
       "projectFolder": "packages/remark-introduction"
+    },
+    {
+      "packageName": "@july_cm/test-screenshot",
+      "projectFolder": "packages/test-screenshot"
     }
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "name": "@july_cm/test-screenshot",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "vitest --config example/vitest.config.ts"
+  },
+  "dependencies": {
+    "@prettier/sync": "^0.5.2",
+    "axios": "^1.7.3",
+    "body-parser": "^1.20.2",
+    "change-case": "^5.4.4",
+    "esbuild-loader": "^4.2.2",
+    "express": "^4.19.2",
+    "glob": "^11.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "jest-image-snapshot": "^6.4.0",
+    "pkg-dir": "^8.0.0",
+    "playwright": "1.45.3",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.0",
+    "signal-exit": "^4.1.0",
+    "webpack": "^5.93.0",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-virtual-modules": "^0.6.2"
+  },
+  "devDependencies": {
+    "@july_cm/eslint-config": "workspace:*",
+    "@july_cm/ts-config": "workspace:*",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/jest-image-snapshot": "^6.4.0",
+    "vitest": "^2.0.5"
+  },
+  "peerDependencies": {
+    "vitest": ">=2"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    }
+  }
+}

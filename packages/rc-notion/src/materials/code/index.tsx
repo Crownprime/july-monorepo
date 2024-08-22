@@ -1,8 +1,7 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 import cls from 'classnames';
-import { highlightElement } from 'prismjs';
+import { languages, highlight } from 'prismjs';
 
 import { NotionBlock } from '../../types';
 
@@ -15,7 +14,6 @@ type CodeProps = {
 } & React.HTMLAttributes<HTMLPreElement>;
 
 const Code: React.FC<CodeProps> = ({ block, className, ...props }) => {
-  const ref = useRef(null);
   const { code } = block;
   const {
     language,
@@ -23,17 +21,12 @@ const Code: React.FC<CodeProps> = ({ block, className, ...props }) => {
   } = code;
   const { plain_text: content } = text;
 
-  useEffect(() => {
-    if (ref.current) {
-      highlightElement(ref.current);
-    }
-  }, []);
+  const lang = languages[language] || languages.javascript;
+  const html = highlight(content, lang, language);
 
   return (
-    <pre className={cls('jmd-notion-code', className)} {...props}>
-      <code className={`language-${language}`} ref={ref}>
-        {content}
-      </code>
+    <pre className={cls('jmd-notion-code', `language-${language}`, className)} {...props}>
+      <code dangerouslySetInnerHTML={{ __html: html }}></code>
     </pre>
   );
 };
