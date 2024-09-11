@@ -1,5 +1,0 @@
-export * from './layout'
-export * from './header'
-export * from './footer'
-export * from './my-avatar'
-export * from './post-target'

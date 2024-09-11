@@ -435,11 +435,11 @@
     },
     {
       "packageName": "@july_cm/eslint-config",
-      "projectFolder": "packages/eslint-config"
+      "projectFolder": "config/eslint-config"
     },
     {
       "packageName": "@july_cm/ts-config",
-      "projectFolder": "packages/ts-config"
+      "projectFolder": "config/ts-config"
     },
     {
       "packageName": "@july_cm/rc-hooks",

@@ -1,7 +1,12 @@
+// https://www.tailwindcss.cn/docs/customizing-colors
+
 body, body .always-light {
   --slate-900: 15, 23, 42;
+  --slate-700: 51, 65, 85;
   --slate-600: 71, 85, 105;
+  --slate-500: 100, 116, 139;
 
   --gray-900: 17, 24, 39;
   --gray-800: 31, 41, 55;
+  --gray-600: 75, 85, 99;
 }

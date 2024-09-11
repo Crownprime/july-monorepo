@@ -1,7 +1,9 @@
 @import "./palette.scss";
 
 body, .always-light {
-  --color-primary: rgba(var(--slate-900), 1);
+  --color-primary: rgba(var(--slate-500), 1);
+  --color-primary-hover: rgba(var(--slate-600), 1);
+  --color-primary-active: rgba(var(--slate-700), 1);
 
   --color-text-0: rgba(var(--gray-900), 1);
   --color-text-1: rgba(var(--gray-900), 0.8);

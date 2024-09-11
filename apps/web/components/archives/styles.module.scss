@@ -1,0 +1,49 @@
+.archives {
+  margin: 0 auto;
+  max-width: 860px;
+  & > :not(:first-child) {
+    margin-top: 32px;
+  }
+}
+
+.article-item {
+  padding: 16px 24px;
+  border-radius: 8px;
+  line-height: 1.5;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  &:hover {
+    background-color: var(--color-bg-0);
+  }
+  .article-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text-0);
+  }
+  .article-description {
+    font-size: 16px;
+    color: var(--color-text-1);
+    margin: 8px 0;
+  }
+  .article-date {
+    font-size: 14px;
+    color: var(--color-text-2);
+    margin-bottom: 8px;
+  }
+  .article-properties {
+    display: flex;
+  }
+}
+
+
+.article-more {
+  display: inline-flex;
+  align-items: center;
+  color: rgb(14, 165, 233);
+  text-decoration: none;
+}
+
+.article-skeleton {
+  padding: 16px 24px;
+}
