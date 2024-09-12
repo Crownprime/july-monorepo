@@ -1,7 +1,7 @@
 const path = require('path');
 const { defineConfig: viteDefineConfig, mergeConfig } = require('vitest/config');
 
-const OutdatedSnapshotReporter = require('jest-image-snapshot/src/outdated-snapshot-reporter');
+const OutdatedSnapshotReporter = require('../jest-image-snapshot/outdated-snapshot-reporter');
 
 const defineConfig = (customConfig) => {
   const config = {

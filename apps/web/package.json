@@ -31,7 +31,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/styled-components": "^5.1.12",
-    "eslint": "^8.53.0",
     "sass": "^1.69.7",
     "typescript": "^5.2.2"
   }
