@@ -1,11 +1,5 @@
-const path = require('path');
+import javaScriptLint from './javascript.js';
+import typeScriptLint from './typescript.js';
+import packageJson from './package-json.js';
 
-const defineConfig = (config) => {
-  const { extends: customExtends = [], ...customConfig } = config;
-  return {
-    extends: [path.resolve(__dirname, '.eslintrc.base.js'), ...customExtends],
-    ...customConfig,
-  };
-};
-
-module.exports = { defineConfig };
+export default [...javaScriptLint, ...typeScriptLint, ...packageJson];

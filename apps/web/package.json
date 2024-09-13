@@ -2,6 +2,7 @@
   "name": "@july_cm/web",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,8 +12,8 @@
     "@july_cm/rc-design": "workspace:*",
     "@july_cm/rc-hooks": "workspace:*",
     "@july_cm/rc-icons": "workspace:*",
-    "@july_cm/rc-notion": "workspace:*",
     "@notionhq/client": "^2.2.14",
+    "@july_cm/rc-notion": "workspace:*",
     "classnames": "^2.3.1",
     "dayjs": "^1.11.10",
     "lodash-es": "^4.17.21",

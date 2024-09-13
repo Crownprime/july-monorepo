@@ -14,7 +14,7 @@ type DescriptionProps = {
 } & Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 
 const PropertyDescription: React.FC<DescriptionProps> = ({ page, ...props }) => {
-  const description = (page.properties.Name as DescriptionProperty).rich_text;
+  const description = (page.properties.Description as DescriptionProperty).rich_text;
   return (
     <div {...props}>
       {description.map((i) => (

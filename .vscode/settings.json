@@ -1,5 +1,5 @@
 {
-  "eslint.nodePath": "packages/eslint-config/node_modules/eslint",
+  "eslint.nodePath": "config/eslint-config/node_modules",
   "eslint.probe": [
     "javascript",
     "javascriptreact",

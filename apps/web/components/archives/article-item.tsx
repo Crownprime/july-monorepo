@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Link from 'next/link';
+import { Link } from '../link';
 
 import styles from './styles.module.scss';
 import { PropertyTitle, PropertyDescription, PropertyPublishDate, PropertyTags } from '../notion';
@@ -15,17 +15,20 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
   const { id } = article;
 
   return (
-    <Link className={styles['article-item']} href={`/article/${id}`}>
+    <div className={styles['article-item']}>
       <div className={styles['article-date']}>
         <PropertyPublishDate page={article} />
       </div>
-      <PropertyTitle className={styles['article-title']} page={article} />
+      <Link href={`/article/${id}`}>
+        <PropertyTitle className={styles['article-title']} page={article} />
+      </Link>
       <PropertyDescription className={styles['article-description']} page={article} />
       <div className={styles['article-properties']}>
         <PropertyTags page={article} />
       </div>
-    </Link>
+    </div>
   );
 };
+
 
 export { ArticleItem };

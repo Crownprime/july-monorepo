@@ -25,7 +25,7 @@
   "devDependencies": {
     "@july_cm/eslint-config": "workspace:*",
     "@july_cm/ts-config": "workspace:*",
-    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/lodash": "^4.14.202",
